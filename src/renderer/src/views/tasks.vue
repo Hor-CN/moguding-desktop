@@ -1,7 +1,7 @@
 <template>
   <el-empty description="description" />
 
-  <el-drawer v-model="drawer" title="I am the title" modal-class="mymodal" :direction="direction">
+  <el-drawer v-model="drawer" title="新增定时任务" modal-class="mymodal" :direction="direction">
     <span>Hi, there!</span>
   </el-drawer>
 </template>

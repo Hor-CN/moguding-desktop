@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.1.9",
+    "@iconify-json/ion": "^1.1.4",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/crypto-js": "^4.1.1",
     "@vitejs/plugin-vue": "^3.0.3",

@@ -32,6 +32,7 @@ const handleSelect = (key, keyPath) => {
     :show-close="false"
     :destroy-on-close="true"
     modal-class="mymodal"
+    class="rounded-2"
   >
     <el-scrollbar height="200px">
       欢迎使用工学云/蘑菇丁助手<br />以下为本软件使用须知，请仔细阅读。
@@ -123,12 +124,4 @@ const handleSelect = (key, keyPath) => {
 
 <style lang="less">
 @import './assets/css/app.less';
-
-.mymodal {
-  height: auto !important;
-  margin: 10px !important;
-  margin-bottom: 10px !important;
-  margin-right: 22px !important;
-  border-radius: 0.5rem;
-}
 </style>

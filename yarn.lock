@@ -349,6 +349,13 @@
   dependencies:
     "@iconify/types" "*"
 
+"@iconify-json/ion@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.npmmirror.com/@iconify-json/ion/-/ion-1.1.4.tgz#97d134dcc174ed9268e92a4bb69adaae105aea8e"
+  integrity sha512-30sOiE7OIboJXCFqIUfyAcskE49pEUjPyQs2Pl35o4lBXKZ46Jy3RzD+atkWBVz6ftlvTk9jE/qFi2mZ+gk78g==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
