@@ -36,3 +36,4 @@ export var deviceType = {
 
 // app
 export const AppName = '蘑菇丁助手'
+export const Poem = '天若有情天亦老，人间正道是沧桑。'

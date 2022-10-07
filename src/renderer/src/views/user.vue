@@ -39,6 +39,8 @@
               value: 'name'
             }"
             :options="pcas"
+            @change="dzchange"
+            v-model="userform.default_pc"
             clearable
             filterable
             placeholder="请选择省市"
@@ -76,7 +78,7 @@
             </template>
             地理位置
           </el-button>
-          <el-button type="primary" @click="newUserVisible = true">
+          <el-button type="primary" @click="dzchange">
             <template #icon>
               <i class="i-ic-round-person-add-alt" />
             </template>
@@ -101,12 +103,31 @@
         </el-col>
       </el-row>
     </template>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="userId" label="用户ID" width="180" />
-      <el-table-column prop="name" label="姓名" width="180" />
-      <el-table-column prop="address" label="Address" />
+    <el-table :data="tableData" height="250" style="width: 100%">
+      <el-table-column type="selection" width="36" align="center" />
+      <el-table-column prop="headImg" label="头像" align="center">
+        <template #default="scope">
+          <el-avatar :size="30" :src="scope.row.headImg" />
+        </template>
+      </el-table-column>
+      <el-table-column prop="userId" label="用户ID" align="center" width="95" />
+      <el-table-column prop="moguNo" label="蘑菇号" align="center" width="100" />
+      <el-table-column prop="name" label="姓名" align="center" />
+      <el-table-column prop="phone" label="手机号" align="center" width="105" />
+      <el-table-column prop="school" label="学校" align="center" />
+
+      <el-table-column prop="address" label="签到地址" show-overflow-tooltip />
     </el-table>
+    <el-pagination
+      small
+      background
+      layout="prev, pager, next"
+      total-text="总数"
+      :total="50"
+      class="mt-4 float-right mb-3"
+    />
   </el-card>
+  <Footer></Footer>
 </template>
 
 <script setup>
@@ -117,31 +138,72 @@ import { pcas } from '../config/pc-code.js'
 const newUserVisible = ref(false)
 
 const userform = reactive({
+  default_pc: '',
   phone: '',
   password: '',
-  sfcs: '',
-  address: ''
+  country: '中国',
+  province: '',
+  city: '',
+  address: '',
+  longitude: '',
+  latitude: '',
+  description: '',
+  type: 'START',
+  device: ''
 })
+
+const dzchange = (value) => {
+  userform.province = value[0]
+  userform.city = value[1]
+}
+
 const tableData = [
   {
-    userId: '001',
-    name: '测试数据',
-    address: 'No. 189, Grove St, Los Angeles'
+    headImg: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    userId: '103817460',
+    moguNo: '6197939',
+    name: '张三',
+    phone: '1325201400',
+    school: '武汉大学',
+    address: '中国湖北省武汉市江夏区东湖开发区华工园三路1号'
   },
   {
-    userId: '001',
-    name: '测试数据',
-    address: 'No. 189, Grove St, Los Angeles'
+    headImg: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    userId: '103817460',
+    moguNo: '6197939',
+    name: '张三',
+    phone: '1325201400',
+    school: '武汉大学',
+    address: '中国湖北省武汉市江夏区东湖开发区华工园三路1号'
   },
   {
-    userId: '001',
-    name: '测试数据',
-    address: 'No. 189, Grove St, Los Angeles'
+    headImg: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    userId: '103817460',
+    moguNo: '6197939',
+    name: '张三',
+    phone: '1325201400',
+    school: '武汉大学',
+    address: '中国湖北省武汉市江夏区东湖开发区华工园三路1号'
   },
+  ,
   {
-    userId: '001',
-    name: '测试数据',
-    address: 'No. 189, Grove St, Los Angeles'
+    headImg: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    userId: '103817460',
+    moguNo: '6197939',
+    name: '张三',
+    phone: '1325201400',
+    school: '武汉大学',
+    address: '中国湖北省武汉市江夏区东湖开发区华工园三路1号'
+  },
+  ,
+  {
+    headImg: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    userId: '103817460',
+    moguNo: '6197939',
+    name: '张三',
+    phone: '1325201400',
+    school: '武汉大学',
+    address: '中国湖北省武汉市江夏区东湖开发区华工园三路1号'
   }
 ]
 </script>

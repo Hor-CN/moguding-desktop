@@ -1,6 +1,7 @@
 <script setup>
 import * as echarts from 'echarts'
 import { onMounted, onUnmounted } from 'vue'
+import Footer from '../components/footer.vue'
 let myChart = null
 onMounted(() => {
   myChart = echarts.init(document.getElementById('zoom'))
@@ -116,6 +117,7 @@ onUnmounted(() => {
   <el-card class="mt-3" shadow="hover">
     <div id="zoom"></div>
   </el-card>
+  <Footer></Footer>
 </template>
 <style lang="less" scoped>
 #zoom {

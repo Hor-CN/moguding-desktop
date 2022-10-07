@@ -1,8 +1,22 @@
 <script setup>
 import { AppName } from './config/index.js'
 import { ref } from 'vue'
-const appName = AppName
+
+const Store = require('electron-store')
+const store = new Store()
 const dialogVisible = ref(true)
+const ischeck = ref(false)
+if (store.has('isUseDialog')) {
+  dialogVisible.value = false
+}
+const ok = () => {
+  dialogVisible.value = false
+  if (!store.has('isUseDialog')) {
+    store.set('isUseDialog', 'true')
+  }
+}
+
+const appName = AppName
 let title = ref('仪表盘')
 const handleSelect = (key, keyPath) => {
   switch (key) {
@@ -58,7 +72,10 @@ const handleSelect = (key, keyPath) => {
 
     <template #footer>
       <span class="dialog-footer">
-        <el-button type="primary" @click="dialogVisible = false">我已了解</el-button>
+        <el-space wrap>
+          <el-checkbox v-model="ischeck" label="不在提示" size="large" />
+          <el-button type="primary" @click="ok">我已了解</el-button>
+        </el-space>
       </span>
     </template>
   </el-dialog>

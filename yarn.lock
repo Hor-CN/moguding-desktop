@@ -342,6 +342,13 @@
   resolved "https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify-json/fa@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmmirror.com/@iconify-json/fa/-/fa-1.1.2.tgz#5d15fca14e881b038076f302e9b6e324c5df4e8c"
+  integrity sha512-+hqbFjYVfC5BenzET5iKilIGLnL0XtNdPDqXwu1CvyxX84R4DVPBveB+dvvurzUZpxS0nCgSGua8iYhCc+/Dag==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/ic@^1.1.9":
   version "1.1.9"
   resolved "https://registry.npmmirror.com/@iconify-json/ic/-/ic-1.1.9.tgz#d47d5a94acd56856ace9d536f98903f1a6d99f49"

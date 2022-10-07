@@ -28,6 +28,7 @@
     "vue-router": "4"
   },
   "devDependencies": {
+    "@iconify-json/fa": "^1.1.2",
     "@iconify-json/ic": "^1.1.9",
     "@iconify-json/ion": "^1.1.4",
     "@rushstack/eslint-patch": "^1.1.4",
