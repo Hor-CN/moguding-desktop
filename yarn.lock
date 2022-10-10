@@ -864,9 +864,9 @@
   resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.2.40.tgz"
   integrity sha512-0PLQ6RUtZM0vO3teRfzGi4ltLUO5aO+kLgwh4Um3THSR03rpQWLTuRCkuO5A41ITzwdWeKdPHtSARuPkoo5pCQ==
 
-"@vueuse/core@^9.1.0":
+"@vueuse/core@^9.1.0", "@vueuse/core@^9.3.0":
   version "9.3.0"
-  resolved "https://registry.npmmirror.com/@vueuse/core/-/core-9.3.0.tgz"
+  resolved "https://registry.npmmirror.com/@vueuse/core/-/core-9.3.0.tgz#74d855bd19cb5eadd2edb30c871918fac881e8b8"
   integrity sha512-64Rna8IQDWpdrJxgitDg7yv1yTp41ZmvV8zlLEylK4QQLWAhz1OFGZDPZ8bU4lwcGgbEJ2sGi2jrdNh4LttUSQ==
   dependencies:
     "@types/web-bluetooth" "^0.0.15"
@@ -878,6 +878,14 @@
   version "9.3.0"
   resolved "https://registry.npmmirror.com/@vueuse/metadata/-/metadata-9.3.0.tgz"
   integrity sha512-GnnfjbzIPJIh9ngL9s9oGU1+Hx/h5/KFqTfJykzh/1xjaHkedV9g0MASpdmPZIP+ynNhKAcEfA6g5i8KXwtoMA==
+
+"@vueuse/rxjs@^9.3.0":
+  version "9.3.0"
+  resolved "https://registry.npmmirror.com/@vueuse/rxjs/-/rxjs-9.3.0.tgz#51b5e61c01c978a5afcdfb1bf4fb9d82ece6c401"
+  integrity sha512-K3Z7tTe/jTr5DuqAkb+mxglgZ+hHdt7rbjd9xuJKudZncxBIu5UdMMq+8Y5m6NwcqP2HMbS/ugQ60pW6dkqtzg==
+  dependencies:
+    "@vueuse/shared" "9.3.0"
+    vue-demi "*"
 
 "@vueuse/shared@9.3.0":
   version "9.3.0"
@@ -1610,6 +1618,11 @@ detect-node@^2.0.4:
   version "2.1.0"
   resolved "https://registry.npmmirror.com/detect-node/-/detect-node-2.1.0.tgz"
   integrity sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==
+
+dexie@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.npmmirror.com/dexie/-/dexie-3.2.2.tgz#fa6f2a3c0d6ed0766f8d97a03720056f88fe0e01"
+  integrity sha512-q5dC3HPmir2DERlX+toCBbHQXW5MsyrFqPFcovkH9N2S/UW/H3H5AWAB6iEOExeraAu+j+zRDG+zg/D7YhH0qg==
 
 dir-compare@^2.4.0:
   version "2.4.0"
@@ -3755,6 +3768,13 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
+rxjs@^7.5.7:
+  version "7.5.7"
+  resolved "https://registry.npmmirror.com/rxjs/-/rxjs-7.5.7.tgz#2ec0d57fdc89ece220d2e702730ae8f1e49def39"
+  integrity sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==
+  dependencies:
+    tslib "^2.1.0"
+
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz"
@@ -4038,7 +4058,7 @@ tslib@2.3.0:
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
 
-tslib@^2.3.0:
+tslib@^2.1.0, tslib@^2.3.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==

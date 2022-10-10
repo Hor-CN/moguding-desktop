@@ -23,6 +23,7 @@ export const planInfoUrl = '/practice/plan/v2/info'
  */
 export const clockSaveUrl = '/attendence/clock/v2/save'
 
+export const imgUrl = 'https://qiniu.gongxueyun.com/upload/'
 export const key = '23DbtQHR2UMbH6mJ'
 export const salt = '3478cbbc33f84bd00d75d7dfa69e0daa'
 

@@ -12,14 +12,16 @@ function aesHex(str) {
 /**
  * 用户信息解密
  * @param {String} data
- * @returns josn
  */
 function decryptUserInfo(data) {
-  let srcs = cryptoJs.enc.Utf8.parse(data)
-  let encrypted = cryptoJs.AES.decrypt(srcs, cryptoJs.enc.Utf8.parse(key), {
-    mode: cryptoJs.mode.ECB
+  let encryptedHexStr = cryptoJs.enc.Hex.parse(data)
+  let srcs = cryptoJs.enc.Base64.stringify(encryptedHexStr)
+  let decrypt = cryptoJs.AES.decrypt(srcs, cryptoJs.enc.Utf8.parse(key), {
+    mode: cryptoJs.mode.ECB,
+    padding: cryptoJs.pad.Pkcs7
   })
-  return encrypted.ciphertext.toString()
+  let decryptedStr = decrypt.toString(cryptoJs.enc.Utf8)
+  return decryptedStr.toString()
 }
 
 function planSign(id, type) {
@@ -57,4 +59,4 @@ function reportSign(userId, reportType, planId, title) {
   return cryptoJs.MD5(userId + reportType + planId + title + salt).toString()
 }
 
-export { aesHex, planSign, saveSign }
+export { aesHex, planSign, saveSign, decryptUserInfo }

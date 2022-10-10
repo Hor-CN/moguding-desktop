@@ -1,11 +1,6 @@
-import myAxios from "../axios/idnex.js";
-import {
-  loginUrl,
-  deviceType,
-  logoutUrl,
-  getPlanByStuUrl,
-} from "../config/index.js";
-import { aesHex, planSign } from "../utils/index.js";
+import myAxios from '../axios/idnex.js'
+import { loginUrl, deviceType, logoutUrl, getPlanByStuUrl } from '../config/index.js'
+import { aesHex, planSign } from '../utils/index.js'
 
 /**
  * @author hor
@@ -20,17 +15,17 @@ export function login(phone, password, loginType = deviceType.ADNROID) {
   return myAxios(
     {
       url: loginUrl,
-      method: "post",
+      method: 'post',
       data: {
         password: aesHex(password),
         t: aesHex(Date.now().toString()),
         phone: aesHex(phone),
         loginType: loginType,
-        uuid: "",
-      },
+        uuid: ''
+      }
     },
     loginType
-  );
+  )
 }
 
 /**
@@ -42,21 +37,25 @@ export function login(phone, password, loginType = deviceType.ADNROID) {
  * @param {string} role 身份：默认‘student’
  * @param loginType 登录设备默认‘Android’
  */
-export function logout(
-  token,
-  role = "student",
-  loginType = deviceType.ADNROID
-) {
+export function logout(token, role = 'student', loginType = deviceType.ADNROID) {
   return myAxios(
     {
       url: logoutUrl,
-      method: "post",
+      method: 'post',
       headers: {
         Authorization: token,
-        roleKey: role,
-      },
+        roleKey: role
+      }
     },
     loginType
-  );
+  )
 }
 
+/**
+ * 用户信息
+ */
+// export function userInfo() {
+//   return myAxios({
+
+//   })
+// }

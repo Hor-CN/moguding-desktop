@@ -2,6 +2,10 @@
 import * as echarts from 'echarts'
 import { onMounted, onUnmounted } from 'vue'
 import Footer from '../components/footer.vue'
+import { db } from '../db/index.js'
+import { liveQuery } from 'dexie'
+import { useObservable } from '@vueuse/rxjs'
+
 let myChart = null
 onMounted(() => {
   myChart = echarts.init(document.getElementById('zoom'))
@@ -86,6 +90,8 @@ onMounted(() => {
 onUnmounted(() => {
   myChart.dispose()
 })
+
+const userCount = useObservable(liveQuery(() => db.user.count()))
 </script>
 <template>
   <el-row :gutter="12">
@@ -94,7 +100,7 @@ onUnmounted(() => {
         <template #header>
           <span class="border-l-4 border-cyan-900 pl-1">用户数</span>
         </template>
-        1<small>人</small>
+        {{ userCount }}<small>人</small>
       </el-card>
     </el-col>
     <el-col :span="8">
